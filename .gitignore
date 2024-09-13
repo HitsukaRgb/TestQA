@@ -1,7 +1,5 @@
-*__pycache__
-*.env
-*.gitignore
-*.pytest_cache
-*.idea
-*.git
-*.venv
+__pycache__/
+.env
+.pytest_cache/
+.idea/
+.venv/
