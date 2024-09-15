@@ -10,12 +10,12 @@ def load_env():
     yield data
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def get_login(load_env):
     yield load_env["SWAGLABS_LOGIN"]
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def get_password(load_env):
     yield load_env["SWAGLABS_PASSWORD"]
 
@@ -32,16 +32,16 @@ def get_after_authorization_page(get_login_page):
     yield page
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def get_git_token(load_env):
     yield load_env["TOKEN"]
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def get_repo_name(load_env):
     yield load_env["REPONAME"]
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def get_user_name(load_env):
     yield load_env["USERNAME"]
